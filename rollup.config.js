@@ -9,6 +9,7 @@ import { terser } from 'rollup-plugin-terser';
 import { string } from 'rollup-plugin-string';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import scss from 'rollup-plugin-scss';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -43,6 +44,10 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+
+      scss({
+        output: 'static/main.css',
+      }),
 
       string({
         include: './src/node_modules/*.vrtx',
@@ -104,6 +109,10 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+
+      scss({
+        output: 'static/main.css',
+      }),
 
       string({
         include: './src/node_modules/*.vrtx',

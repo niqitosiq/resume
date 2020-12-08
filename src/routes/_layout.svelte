@@ -1,10 +1,9 @@
 <script>
 </script>
 
-<style>
+<style lang="scss">
 </style>
 
-
 <main>
-	<slot />
+  <slot />
 </main>
