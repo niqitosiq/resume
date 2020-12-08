@@ -10,7 +10,6 @@
     height: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
     z-index: 5;
   }
   .line {
@@ -19,14 +18,14 @@
     left: 0;
     width: 1px;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     transition: transform ease 1s;
     transform: scaleY(0);
     transform-origin: center bottom;
   }
   .lines__container {
     position: relative;
-    width: 780px;
+    width: 1090px;
     height: 100%;
     margin: 0 auto;
   }

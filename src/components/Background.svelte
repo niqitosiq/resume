@@ -94,6 +94,7 @@
     left: 0;
     top: 0;
     z-index: -1;
+    opacity: 0.7;
   }
 </style>
 
