@@ -6,7 +6,9 @@
     margin: 300px auto;
     position: relative;
     z-index: 10;
+    padding: 30px 45px;
+    color: #fff;
   }
 </style>
 
-<div class="resume">привет</div>
+<div class="resume">при22222222222вет</div>
