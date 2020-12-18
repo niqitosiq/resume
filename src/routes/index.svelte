@@ -1,14 +1,20 @@
 <script>
-  import Background from '../components/blocks/Background.svelte';
+  import Summary from '../components/blocks/index/Summary.svelte';
 </script>
 
-<style>
+<style lang="scss">
+  .index {
+    padding: var(--top-padding);
+    padding-top: 87px;
+    padding-bottom: 45px;
+
+    @media screen and (max-width: 930px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
 </style>
 
-<Background />
-
 <div class="index">
-  <p>
-    Приветттттттттттттт<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-  </p>
+  <Summary />
 </div>

@@ -36,6 +36,11 @@
   .menus {
     display: flex;
   }
+  .links {
+    @media screen and (max-width: 780px) {
+      display: none;
+    }
+  }
   .langs {
     margin-left: 62px;
   }
@@ -67,7 +72,7 @@
   </div>
 
   <div class="menus">
-    <ul>
+    <ul class="links">
       {#each menus as { label, href }}
         <Link {href}>
           <li>{label}</li>

@@ -1,8 +1,9 @@
 <script>
   import Header from '../components/blocks/Header.svelte';
+  import Background from '../components/blocks/Background.svelte';
 </script>
 
-<style lang="scss">
+<style lang="scss" global>
   @import '../styles/main';
 
   .main {
@@ -11,14 +12,15 @@
     color: var(--text-gray);
     border-radius: 20px;
     margin: 60px auto;
-    width: 100%;
+    width: calc(100% - 20px);
     position: relative;
     z-index: 10;
   }
 </style>
 
 <main class="main">
-  <div class="container">
+  <Background />
+  <div>
     <Header />
     <slot />
   </div>
