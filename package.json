@@ -14,7 +14,6 @@
     "polka": "next",
     "postcss": "^8.2.1",
     "postcss-preset-env": "^6.7.0",
-    "rollup-plugin-scss": "^2.6.1",
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.30.0",
     "sirv": "^1.0.0",
