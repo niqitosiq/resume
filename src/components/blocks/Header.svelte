@@ -26,6 +26,7 @@
     align-items: center;
     height: 85px;
     border-bottom: 1px solid #333333;
+    padding: var(--top-padding);
   }
   .logo {
     font-weight: 700;
