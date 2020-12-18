@@ -1,8 +1,42 @@
-body {
-  background: #333338;
+@import '../../node_modules/normalize.scss/normalize.scss';
+@import './fonts';
 
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+@include font-face(
+  CenturyGothic,
+  '/fonts/CenturyGothic',
+  400,
+  normal,
+  woff2 woff eot ttf
+);
+@include font-face(
+  CenturyGothic,
+  '/fonts/CenturyGothic-Bold',
+  700,
+  normal,
+  woff2 woff eot ttf
+);
+
+:root {
+  --accent: #007ced;
+  --white: #f5f5f5;
+  --text-dark: #252525;
+  --text-gray: #d5d5d5;
+  --background-dark: #252525;
+  --background-gray: #444444;
+
+  --container-width: 1320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--accent);
+
+  font-family: 'CenturyGothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
+  color: var(--text-gray);
 }

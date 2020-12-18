@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "normalize.scss": "^0.1.0",
     "polka": "next",
     "rollup-plugin-scss": "^2.6.1",
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.30.0",
     "sirv": "^1.0.0",
-    "svelte-preprocess": "^4.6.1",
-    "three": "^0.123.0"
+    "svelte-preprocess": "^4.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

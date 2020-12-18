@@ -1,14 +1,17 @@
 <style lang="scss">
   .resume {
-    background-color: rgba(49, 53, 80, 0.9);
-    max-width: 780px;
-    height: 5000px;
-    margin: 300px auto;
+    background-color: var(--background-dark);
+    max-width: var(--container-width);
+    color: var(--text-gray);
+    border-radius: 20px;
+    margin: 60px auto;
+    padding: 0px 50px;
+    width: 100%;
     position: relative;
     z-index: 10;
-    padding: 30px 45px;
-    color: #fff;
   }
 </style>
 
-<div class="resume">при22222222222вет</div>
+<div class="resume">
+  <div>Как дела?</div>
+</div>
