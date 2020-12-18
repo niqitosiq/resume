@@ -3,6 +3,8 @@
 </script>
 
 <style lang="scss">
+  @import '../styles/main';
+
   .main {
     background-color: var(--background-dark);
     max-width: var(--container-width);

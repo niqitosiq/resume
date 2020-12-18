@@ -2,7 +2,7 @@
   import Link from '../ui/Link.svelte';
 
   const menus = [
-    { label: 'Обо мне', href: '/about' },
+    { label: 'Обо мне', href: '/' },
     { label: 'Резюме', href: '/resume' },
     { label: 'Контакты', href: '/contacts' },
     { label: 'Блог', href: 'https://portfolio.jaex.ru' },

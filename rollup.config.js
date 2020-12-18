@@ -9,7 +9,7 @@ import { terser } from 'rollup-plugin-terser';
 import { string } from 'rollup-plugin-string';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
-import scss from 'rollup-plugin-scss';
+import sveltePreprocess from 'svelte-preprocess';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -21,6 +21,15 @@ const onwarn = (warning, onwarn) =>
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
 
+const preprocess = sveltePreprocess({
+  scss: {
+    includePaths: ['src'],
+  },
+  postcss: {
+    plugins: [require('autoprefixer')],
+  },
+});
+
 export default {
   client: {
     input: config.client.input(),
@@ -30,11 +39,14 @@ export default {
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
+
       svelte({
         dev,
         hydratable: true,
-        emitCss: true,
+        emitCss: false,
+        preprocess,
       }),
+
       url({
         sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
         publicPath: '/client/',
@@ -44,10 +56,6 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
-
-      scss({
-        output: 'static/main.css',
-      }),
 
       string({
         include: './src/node_modules/*.vrtx',
@@ -98,8 +106,9 @@ export default {
       svelte({
         generate: 'ssr',
         hydratable: true,
-        emitCss: true,
+        emitCss: false,
         dev,
+        preprocess,
       }),
       url({
         sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
@@ -110,10 +119,6 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
-
-      scss({
-        output: 'static/main.css',
-      }),
 
       string({
         include: './src/node_modules/*.vrtx',
