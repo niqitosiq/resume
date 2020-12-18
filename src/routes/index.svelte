@@ -1,7 +1,6 @@
 <script>
-  import Background from '../components/Background.svelte';
-
-  import Resume from '../components/Resume.svelte';
+  import Background from '../components/blocks/Background.svelte';
+  import Header from '../components/blocks/Header.svelte';
 </script>
 
 <style>
@@ -9,4 +8,8 @@
 
 <Background />
 
-<Resume />
+<div class="index">
+  <div class="container">
+    <Header />
+  </div>
+</div>

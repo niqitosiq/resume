@@ -39,4 +39,23 @@ body {
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   color: var(--text-gray);
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
 }

@@ -11,6 +11,7 @@
   }
   .circle-top,
   .circle-bottom {
+    display: none;
     width: 100px;
     height: 100px;
     position: absolute;
