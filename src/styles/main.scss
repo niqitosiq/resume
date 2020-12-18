@@ -29,6 +29,10 @@
   --container-width: 1320px;
 
   --top-padding: 0px 50px;
+
+  @media screen and (max-width: 560px) {
+    --top-padding: 0px 30px;
+  }
 }
 
 * {
@@ -62,6 +66,16 @@ a:active {
 ul {
   padding-left: 0;
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  margin: 0;
 }
 
 h1 {

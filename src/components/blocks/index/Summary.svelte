@@ -62,7 +62,7 @@
   }
 </style>
 
-<div class="summary">
+<section class="summary">
   <div class="image"><img src="/img/person-face.jpg" alt="" /></div>
   <div class="personal">
     <p class="info">Веб-разработчик</p>
@@ -78,4 +78,4 @@
       <Button>Связаться</Button>
     </div>
   </div>
-</div>
+</section>

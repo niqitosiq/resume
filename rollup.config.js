@@ -10,6 +10,7 @@ import { string } from 'rollup-plugin-string';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import sveltePreprocess from 'svelte-preprocess';
+import svgicons from 'rollup-plugin-svg-icons';
 
 const preprocess = sveltePreprocess({
   postcss: true,
@@ -44,6 +45,11 @@ export default {
         css: css => {
           css.write('static/bundle.css');
         },
+      }),
+
+      svgicons({
+        inputFolder: 'src/icons',
+        output: 'static/bundle.svg',
       }),
 
       url({
@@ -112,6 +118,7 @@ export default {
           css.write('static/bundle.css');
         },
       }),
+
       url({
         sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
         publicPath: '/client/',

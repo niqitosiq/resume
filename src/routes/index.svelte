@@ -1,4 +1,5 @@
 <script>
+  import Specialization from '../components/blocks/index/Specialization.svelte';
   import Summary from '../components/blocks/index/Summary.svelte';
 </script>
 
@@ -17,4 +18,5 @@
 
 <div class="index">
   <Summary />
+  <Specialization />
 </div>
