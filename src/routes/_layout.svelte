@@ -1,6 +1,7 @@
 <script>
   import Header from '../components/blocks/Header.svelte';
   import Background from '../components/blocks/Background.svelte';
+  import Footer from '../components/blocks/Footer.svelte';
 </script>
 
 <style lang="scss" global>
@@ -23,5 +24,6 @@
   <div>
     <Header />
     <slot />
+    <Footer />
   </div>
 </main>
