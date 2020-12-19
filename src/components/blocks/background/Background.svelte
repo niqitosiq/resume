@@ -1,6 +1,9 @@
 <script>
   import { onMount } from 'svelte';
   import { gsap } from 'gsap';
+  import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+
+  gsap.registerPlugin(DrawSVGPlugin);
 
   import Svg1 from './circles/1.svelte';
   import Svg2 from './circles/2.svelte';
@@ -8,9 +11,7 @@
   import Svg4 from './circles/4.svelte';
   import Svg5 from './circles/5.svelte';
 
-  onMount(() => {
-    if (!document) return;
-
+  const initParallax = () => {
     const rect = document.body;
     let mouse = [0, 0, false];
     rect.addEventListener('mousemove', event => {
@@ -18,17 +19,25 @@
     });
 
     const parallax = (target, movement) => {
+      var centerX = rect.clientWidth / 2;
+      var centerY = rect.clientHeight / 2;
+
+      var dx = mouse[0] - centerX;
+      var dy = mouse[1] - centerY;
+
+      var angle = Math.atan2(dy, dx) / 10;
+
       gsap.to(target, {
         x: ((mouse[0] - rect.clientWidth / 2) / rect.clientWidth) * movement,
         y: ((mouse[1] - rect.clientHeight / 2) / rect.clientHeight) * movement,
+        rotation: angle + '_rad_short',
         duration: 0.5,
       });
     };
 
     const step = () => {
-      console.log(mouse[2]);
       if (mouse[2]) {
-        parallax('.decor-1', -60);
+        parallax('.decor-1', -80);
         parallax('.decor-2', -35);
         parallax('.decor-3', -20);
         parallax('.decor-4', -60);
@@ -39,12 +48,33 @@
     };
 
     window.requestAnimationFrame(step);
+  };
+
+  const initAnimations = () => {
+    const globalTL = gsap.timeline();
+
+    const simpleTL = gsap.timeline();
+
+    // simpleTL.to(
+    //   '.decor-1 svg circle.blue',
+    //   {
+    //     duration: 1,
+    //   },
+    //   '0',
+    // );
+  };
+
+  onMount(() => {
+    if (!document) return;
+    initAnimations();
+    initParallax();
   });
 </script>
 
 <style lang="scss">
   .background {
     position: relative;
+    top: 0px;
     margin: 0 auto;
     max-width: var(--container-width);
     width: 100%;

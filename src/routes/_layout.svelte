@@ -11,7 +11,7 @@
     overflow-x: hidden;
   }
 
-  .main {
+  .wrapper {
     background-color: var(--background-dark);
     max-width: var(--container-width);
     color: var(--text-gray);
@@ -19,9 +19,6 @@
     margin: 60px auto;
     width: calc(100% - 20px);
     position: relative;
-  }
-
-  .wrapper {
     z-index: 10;
   }
 </style>

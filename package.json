@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "gsap": "^3.5.1",
+    "gsap": "./gsap-bonus.tgz",
     "normalize.scss": "^0.1.0",
     "polka": "next",
     "postcss": "^8.2.1",
