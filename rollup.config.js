@@ -11,7 +11,6 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import sveltePreprocess from 'svelte-preprocess';
 import svgicons from 'rollup-plugin-svg-icons';
-
 const preprocess = sveltePreprocess({
   postcss: true,
   sass: true,
@@ -131,6 +130,7 @@ export default {
 
       string({
         include: './src/node_modules/*.vrtx',
+        include: './src/components/background/circles/*.svg',
       }),
     ],
     external: Object.keys(pkg.dependencies).concat(

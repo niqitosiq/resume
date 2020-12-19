@@ -1,11 +1,15 @@
 <script>
   import Header from '../components/blocks/Header.svelte';
-  import Background from '../components/blocks/Background.svelte';
+  import Background from '../components/blocks/background/Background.svelte';
   import Footer from '../components/blocks/Footer.svelte';
 </script>
 
 <style lang="scss" global>
   @import '../styles/main';
+
+  body {
+    overflow-x: hidden;
+  }
 
   .main {
     background-color: var(--background-dark);
@@ -15,13 +19,16 @@
     margin: 60px auto;
     width: calc(100% - 20px);
     position: relative;
+  }
+
+  .wrapper {
     z-index: 10;
   }
 </style>
 
 <main class="main">
   <Background />
-  <div>
+  <div class="wrapper">
     <Header />
     <slot />
     <Footer />
