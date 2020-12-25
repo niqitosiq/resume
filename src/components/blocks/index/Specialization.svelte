@@ -64,6 +64,11 @@
       margin-left: 0;
       margin-right: 0;
     }
+    &:hover {
+      h3 {
+        color: var(--accent-light);
+      }
+    }
   }
   .text {
     margin-left: 25px;
@@ -75,6 +80,7 @@
     font-size: 20px;
     line-height: 25px;
     color: var(--white);
+    transition: color ease 0.3s;
   }
   p {
     margin: 0;

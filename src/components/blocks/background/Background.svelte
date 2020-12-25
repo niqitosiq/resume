@@ -1,9 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import { gsap } from 'gsap';
-  import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
-
-  gsap.registerPlugin(DrawSVGPlugin);
 
   import Svg1 from './circles/1.svelte';
   import Svg2 from './circles/2.svelte';
