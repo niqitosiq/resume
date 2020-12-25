@@ -67,7 +67,7 @@
   <div class="image"><img src="/img/person-face.jpg" alt="" /></div>
   <div class="personal">
     <p class="info">Веб-разработчик</p>
-    <h1>Никита Штанько</h1>
+    <h1>Ольга Штанько</h1>
     <p class="description">
       Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis,
       risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis
