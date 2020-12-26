@@ -1,6 +1,7 @@
 <script>
   import Specialization from '../components/blocks/index/Specialization.svelte';
   import Summary from '../components/blocks/index/Summary.svelte';
+  import { fadeIn, fadeOut } from '../components/utils/pageFade';
 </script>
 
 <style lang="scss">
@@ -16,7 +17,7 @@
   }
 </style>
 
-<div class="index">
+<div class="index" in:fadeIn out:fadeOut>
   <Summary />
   <Specialization />
 </div>

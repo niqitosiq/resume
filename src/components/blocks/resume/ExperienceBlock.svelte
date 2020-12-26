@@ -33,12 +33,10 @@
 
     &:hover {
       .content {
-        &:before {
-          transform: scale(1);
-          transform-origin: top center;
-        }
         &:after {
-          transform: scale(1);
+          transform: scaleY(1);
+          transform-origin: top center;
+          transition-delay: 0s;
         }
       }
       .company {
@@ -67,22 +65,9 @@
       top: 0;
       left: -30px;
       z-index: -1;
-      transition: transform ease 0.3s;
-      transform: scale(0);
+      transition: transform ease 0.2s 0.1s;
+      transform: scaleY(0);
       transform-origin: bottom center;
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      height: 1px;
-      width: calc(100% + 40px);
-      background-color: var(--accent);
-      bottom: 0;
-      left: -30px;
-      z-index: 1;
-      transition: transform ease 0.3s 0.2s;
-      transform: scale(0);
-      transform-origin: left center;
     }
   }
   .header {

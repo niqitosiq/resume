@@ -1,6 +1,7 @@
 <script>
   import ExperienceBlock from '../components/blocks/resume/ExperienceBlock.svelte';
   import Underline from '../components/ui/Underline.svelte';
+  import { fadeIn, fadeOut } from '../components/utils/pageFade';
 
   const experiences = [
     {
@@ -55,7 +56,7 @@
   }
 </style>
 
-<div class="resume">
+<div class="resume" in:fadeIn out:fadeOut>
   <div class="header">
     <h1>Резюме</h1>
   </div>
