@@ -45,13 +45,20 @@
         opacity: 1;
       }
     }
+
+    &:last-child {
+      &:before,
+      .content:before {
+        display: none;
+      }
+    }
   }
   .content {
     z-index: 2;
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
-    &:before {
+    &:after {
       content: '';
       position: absolute;
       height: 100%;
@@ -64,7 +71,7 @@
       transform: scale(0);
       transform-origin: bottom center;
     }
-    &:after {
+    &:before {
       content: '';
       position: absolute;
       height: 1px;

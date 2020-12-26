@@ -1,22 +1,34 @@
 <script>
-  import { text } from 'svelte/internal';
   import ExperienceBlock from '../components/blocks/resume/ExperienceBlock.svelte';
   import Underline from '../components/ui/Underline.svelte';
 
   const experiences = [
     {
-      label: 'Супернова',
-      text:
-        'Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.',
-      company: 'Инсайн',
-      timing: '2010 - 2020',
+      company: 'GetmanPW',
+      timing: 'Январь 2016 - Февраль 2017',
+      label: 'Верстальщик',
+      text: 'Занимался разработкой лендингов и корпоративных сайтов.',
     },
     {
-      label: 'Супернова',
+      company: 'Conception Agency',
+      timing: 'Февраль 2017 - Февраль 2019',
+      label: 'Верстальщик-программист',
       text:
-        'Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.',
+        'Разрабатывал сложные лендинги с упором в Perfect Pixel перенос дизайна и красивые анимации. Создавал сборщики для фронтенда, а так же занимался настройкой окружения для работы сайтов.',
+    },
+    {
+      company: 'Фриланс',
+      timing: 'Февраль 2019 - Апрель 2019',
+      label: 'Веб-разработчик',
+      text:
+        'Делал простые приложения для множества компаний. Среди них сервис для общения персонала со зрителей прямых трансляций, а так же админ-панель для компании ProStream.',
+    },
+    {
       company: 'Инсайн',
-      timing: '2010 - 2020',
+      timing: 'Апрель 2019 - Настоящее время',
+      label: 'Middle Frontend Разработчик',
+      text:
+        'Проектирую и создаю сложные SPA приложения для целей бизнеса на VueJS, среди них: трейдинг-платформа, CRM/CMS, интернет-магазин. Также занимаюсь разработкой лендингов и промостраниц.',
     },
   ];
 </script>
@@ -36,6 +48,7 @@
   }
   .experience {
     max-width: 50%;
+    margin-bottom: 20px;
     &-blocks {
       margin-top: 30px;
     }
