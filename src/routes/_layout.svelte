@@ -2,6 +2,12 @@
   import Header from '../components/blocks/Header.svelte';
   import Background from '../components/blocks/background/Background.svelte';
   import Footer from '../components/blocks/Footer.svelte';
+  import { gsap } from 'gsap';
+  import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
 </script>
 
 <style lang="scss" global>

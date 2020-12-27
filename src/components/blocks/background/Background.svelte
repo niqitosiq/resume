@@ -47,19 +47,7 @@
     window.requestAnimationFrame(step);
   };
 
-  const initAnimations = () => {
-    const globalTL = gsap.timeline();
-
-    const simpleTL = gsap.timeline();
-
-    // simpleTL.to(
-    //   '.decor-1 svg circle.blue',
-    //   {
-    //     duration: 1,
-    //   },
-    //   '0',
-    // );
-  };
+  const initAnimations = () => {};
 
   onMount(() => {
     if (!document) return;
@@ -110,19 +98,21 @@
 </style>
 
 <div class="background">
-  <div class="decor decor-1">
-    <Svg1 />
-  </div>
-  <div class="decor decor-2">
-    <Svg2 />
-  </div>
-  <div class="decor decor-3">
-    <Svg3 />
-  </div>
-  <div class="decor decor-4">
-    <Svg4 />
-  </div>
-  <div class="decor decor-5">
-    <Svg5 />
+  <div class="decors">
+    <div class="decor decor-1">
+      <Svg1 />
+    </div>
+    <div class="decor decor-2">
+      <Svg2 />
+    </div>
+    <div class="decor decor-3">
+      <Svg3 />
+    </div>
+    <div class="decor decor-4">
+      <Svg4 />
+    </div>
+    <div class="decor decor-5">
+      <Svg5 />
+    </div>
   </div>
 </div>

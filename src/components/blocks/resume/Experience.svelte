@@ -43,7 +43,7 @@
   }
 </style>
 
-<div class="experience">
+<div class="experience" id="experience">
   <Underline>
     <h2>Опыт</h2>
   </Underline>

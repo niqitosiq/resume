@@ -1,13 +1,20 @@
 <script>
   import Underline from '../../ui/Underline.svelte';
+  import { gsap } from 'gsap';
 
   const menu = [
-    { label: 'Опыт', link: '' },
-    { label: 'Образование', link: '' },
-    { label: 'Навыки', link: '' },
-    { label: 'Языки', link: '' },
-    { label: 'Хобби', link: '' },
+    { label: 'Опыт', link: '#experience' },
+    { label: 'Образование', link: '#education' },
+    { label: 'Навыки', link: '#skills' },
+    { label: 'Языки', link: '#langs' },
+    { label: 'Хобби', link: '#hobbies' },
   ];
+
+  const scrollTo = (e, to) => {
+    e.preventDefault();
+    if (!window || !document.querySelector(to)) return;
+    gsap.to(window, { duration: 1, scrollTo: to });
+  };
 </script>
 
 <style lang="scss">
@@ -38,6 +45,7 @@
     margin-bottom: 10px;
     margin-right: 10px;
     z-index: 1;
+    overflow: hidden;
     &:last-child {
       margin-bottom: 0;
     }
@@ -45,7 +53,7 @@
       width: 100%;
       padding: 8px 10px;
       display: block;
-      z-index: 1;
+      z-index: 3;
       position: relative;
     }
     &:before {
@@ -55,34 +63,16 @@
       top: 0;
       width: 100%;
       height: 100%;
-      border-radius: 18px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: #747474;
       transform: scaleX(0);
       transform-origin: left center;
       opacity: 0;
-      z-index: -1;
+      z-index: 2;
       transition: opacity ease 0.3s, transform ease 0.3s;
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      background-color: var(--accent);
-      width: 15px;
-      height: 15px;
-      border-radius: 15px;
-      transform: translateY(-50%) scale(0);
-      opacity: 0;
-      transition: transform ease 0.6s 0.32s, opacity ease 0.6s, 0.32s;
     }
     &:hover {
       &:before {
         transform: scaleX(1);
-        opacity: 1;
-      }
-      &:after {
-        transform: translateY(-50%) scale(1);
         opacity: 1;
       }
     }
@@ -103,7 +93,7 @@
     </p>
     <ul class="menu">
       {#each menu as { label, link }}
-        <li><a href={link}> {label} </a></li>
+        <li><a href={link} on:click={e => scrollTo(e, link)}> {label} </a></li>
       {/each}
     </ul>
   </div>
