@@ -1,6 +1,9 @@
 <script>
   import Link from '../ui/Link.svelte';
 
+  import { stores } from '@sapper/app';
+  const { preloading } = stores();
+
   const menus = [
     { label: 'Обо мне', href: '/' },
     { label: 'Резюме', href: '/resume' },
@@ -21,12 +24,33 @@
 
 <style lang="scss">
   .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 85px;
     border-bottom: 1px solid #333333;
     padding: var(--top-padding);
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+      opacity: 1;
+      animation: progressBar 4s 1;
+      transform-origin: left center;
+    }
+    &.loaded {
+      &:after {
+        animation: none;
+        transform: scaleX(1);
+        opacity: 0;
+        transition: opacity ease 0.3s 0.5s, transform ease 0.5s;
+      }
+    }
   }
   .logo {
     font-weight: 700;
@@ -64,9 +88,21 @@
   li:hover {
     opacity: 1;
   }
+
+  @keyframes progressBar {
+    0% {
+      transform: scaleX(0);
+    }
+    50% {
+      transform: scaleX(0.8);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
 </style>
 
-<header class="header">
+<header class="header" class:loaded={!$preloading}>
   <div class="logo">
     <Link href="/">niqitosiq</Link>
   </div>
