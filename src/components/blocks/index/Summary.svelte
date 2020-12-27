@@ -69,10 +69,9 @@
     <p class="info">Веб-разработчик</p>
     <h1>Никита Штанько</h1>
     <p class="description">
-      Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis,
-      risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis
-      purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium
-      eu.
+      Внимательный веб-разработчик с более чем 4-летним опытом работы, страстью
+      к дизайну, пониманием важности Mobile First и Perfect Pixel. Знакомый с
+      множеством современных и эффективных технологий.
     </p>
     <div class="buttons">
       <Button styling="accent">Резюме</Button>
