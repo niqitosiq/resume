@@ -110,8 +110,8 @@
 
   .lines {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     z-index: 101;
   }
 
@@ -146,7 +146,7 @@
     &-4 {
       width: 120%;
       top: 3px;
-      left: 3px;
+      left: 4px;
       transition: transform ease 0.3s;
       transform-origin: left center;
       transform: rotate(45deg) scaleX(0);
@@ -155,7 +155,7 @@
     &-5 {
       width: 120%;
       top: 3px;
-      right: 3px;
+      right: 1px;
       transition: transform ease 0.3s;
       transform-origin: right center;
       transform: rotate(-45deg) scaleX(0);
