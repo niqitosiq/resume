@@ -34,11 +34,11 @@
 
     const step = () => {
       if (mouse[2]) {
-        parallax('.decor-1', -80);
-        parallax('.decor-2', -35);
-        parallax('.decor-3', -20);
-        parallax('.decor-4', -60);
-        parallax('.decor-5', -35);
+        parallax('.decor-1 svg', -80);
+        parallax('.decor-2 svg', -35);
+        parallax('.decor-3 svg', -20);
+        parallax('.decor-4 svg', -60);
+        parallax('.decor-5 svg', -35);
       }
 
       window.requestAnimationFrame(step);
@@ -47,20 +47,113 @@
     window.requestAnimationFrame(step);
   };
 
-  const initAnimations = () => {};
+  const initAnimations = () => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#wrapper',
+        scrub: true,
+        pin: true,
+        start: 'top top',
+        end: '+=500px',
+      },
+    });
+
+    tl.to(
+      '.decor-1',
+      {
+        y: -100,
+        duration: 6,
+      },
+      '0',
+    )
+      .to(
+        '.decor-2',
+        {
+          y: -170,
+          duration: 6,
+        },
+        '-=6',
+      )
+      .to(
+        '.decor-3',
+        {
+          y: -230,
+          duration: 6,
+        },
+        '-=6',
+      )
+      .to(
+        '.decor-4',
+        {
+          y: -180,
+          duration: 6,
+        },
+        '-=6',
+      )
+      .to(
+        '.decor-5',
+        {
+          y: -150,
+          duration: 6,
+        },
+        '-=6',
+      );
+  };
 
   onMount(() => {
     if (!document) return;
+    if (window.outerWidth < 1280) return;
     initAnimations();
     initParallax();
   });
 </script>
 
+<div class="background">
+  <div class="decors">
+    <div class="decor decor-1">
+      <Svg1 />
+    </div>
+    <div class="decor decor-3">
+      <Svg3 />
+    </div>
+    <div class="decor decor-4">
+      <Svg4 />
+    </div>
+  </div>
+  <div class="decors-back">
+    <div class="decor decor-2">
+      <Svg2 />
+    </div>
+    <div class="decor decor-5">
+      <Svg5 />
+    </div>
+  </div>
+</div>
+
 <style lang="scss">
   .background {
     position: relative;
-    top: 0px;
-    margin: 0 auto;
+    pointer-events: none;
+    @media screen and (max-width: 1280px) {
+      display: none;
+    }
+  }
+  .decors {
+    position: fixed;
+    top: 20px;
+    z-index: 15;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: var(--container-width);
+    width: 100%;
+    height: 100%;
+  }
+  .decors-back {
+    position: fixed;
+    z-index: -1;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: var(--container-width);
     width: 100%;
     height: 100%;
@@ -91,28 +184,9 @@
   }
 
   .decor-5 {
+    width: 171px;
     top: 313px;
     left: calc(100% - 206px);
     z-index: -1;
   }
 </style>
-
-<div class="background">
-  <div class="decors">
-    <div class="decor decor-1">
-      <Svg1 />
-    </div>
-    <div class="decor decor-2">
-      <Svg2 />
-    </div>
-    <div class="decor decor-3">
-      <Svg3 />
-    </div>
-    <div class="decor decor-4">
-      <Svg4 />
-    </div>
-    <div class="decor decor-5">
-      <Svg5 />
-    </div>
-  </div>
-</div>

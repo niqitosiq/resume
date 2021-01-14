@@ -5,6 +5,17 @@
   export let timing;
 </script>
 
+<div class="experience-block">
+  <div class="content">
+    <div class="header">
+      <div class="timing">{timing}</div>
+      <div class="company">{company}</div>
+    </div>
+    <h3>{label}</h3>
+    <p>{text}</p>
+  </div>
+</div>
+
 <style lang="scss">
   .experience-block {
     padding-left: 40px;
@@ -74,12 +85,21 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 5px;
+    }
   }
   .company {
     margin-left: 10px;
     opacity: 0.6;
     font-size: 12px;
     transition: opacity ease 0.3s;
+    @media screen and (max-width: 500px) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
   .timing {
     display: inline-block;
@@ -97,14 +117,3 @@
     margin-bottom: 10px;
   }
 </style>
-
-<div class="experience-block">
-  <div class="content">
-    <div class="header">
-      <div class="timing">{timing}</div>
-      <div class="company">{company}</div>
-    </div>
-    <h3>{label}</h3>
-    <p>{text}</p>
-  </div>
-</div>

@@ -48,6 +48,9 @@ body {
     'Segoe UI Symbol';
   color: var(--text-gray);
   font-size: 14px;
+
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {

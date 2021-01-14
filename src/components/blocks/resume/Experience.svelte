@@ -33,16 +33,6 @@
   ];
 </script>
 
-<style lang="scss">
-  .experience {
-    max-width: 50%;
-    margin-bottom: 20px;
-    &-blocks {
-      margin-top: 30px;
-    }
-  }
-</style>
-
 <div class="experience" id="experience">
   <Underline>
     <h2>Опыт</h2>
@@ -53,3 +43,17 @@
     {/each}
   </div>
 </div>
+
+<style lang="scss">
+  .experience {
+    max-width: 50%;
+    margin-bottom: 20px;
+    &-blocks {
+      margin-top: 30px;
+    }
+    @media screen and (max-width: 1000px) {
+      max-width: 100%;
+      padding-right: 30px;
+    }
+  }
+</style>
