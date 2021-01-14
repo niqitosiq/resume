@@ -8,6 +8,8 @@
   import Svg4 from './circles/4.svelte';
   import Svg5 from './circles/5.svelte';
 
+  let backgroundVisible = false;
+
   const initParallax = () => {
     const rect = document.body;
     let mouse = [0, 0, false];
@@ -105,10 +107,12 @@
     if (window.outerWidth < 1280) return;
     initAnimations();
     initParallax();
+
+    backgroundVisible = true;
   });
 </script>
 
-<div class="background">
+<div class="background" class:visible={backgroundVisible}>
   <div class="decors">
     <div class="decor decor-1">
       <Svg1 />
@@ -137,26 +141,30 @@
     @media screen and (max-width: 1280px) {
       display: none;
     }
+    &.visible {
+      .decors,
+      .decors-back {
+        opacity: 1;
+      }
+    }
   }
-  .decors {
-    position: fixed;
-    top: 20px;
-    z-index: 15;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: var(--container-width);
-    width: 100%;
-    height: 100%;
-  }
+  .decors,
   .decors-back {
     position: fixed;
-    z-index: -1;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     max-width: var(--container-width);
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: opacity ease 0.3s;
+  }
+  .decors {
+    z-index: 15;
+  }
+  .decors-back {
+    z-index: -1;
   }
   .decor {
     position: absolute;
