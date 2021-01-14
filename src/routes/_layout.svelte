@@ -1,5 +1,5 @@
 <script>
-  import Header from '../components/blocks/Header.svelte';
+  import Header from '../components/blocks/header/Header.svelte';
   import Background from '../components/blocks/background/Background.svelte';
   import Footer from '../components/blocks/Footer.svelte';
   import { gsap } from 'gsap';
@@ -9,6 +9,15 @@
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
 </script>
+
+<main class="main">
+  <Background />
+  <div class="wrapper">
+    <Header />
+    <slot />
+    <Footer />
+  </div>
+</main>
 
 <style lang="scss" global>
   @import '../styles/main';
@@ -28,12 +37,3 @@
     z-index: 10;
   }
 </style>
-
-<main class="main">
-  <Background />
-  <div class="wrapper">
-    <Header />
-    <slot />
-    <Footer />
-  </div>
-</main>
