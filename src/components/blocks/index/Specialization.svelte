@@ -10,25 +10,38 @@
         'Проектирование и разработка масштабируемых интерфейсов, административных панелей, создание UI-китов, верстка, гибкая и сложная логика с современным стеком',
     },
     {
-      icon: 'backend',
-      label: 'Бекенд-разработка',
-      text:
-        'Создание и развертка бекенда, настройка CI/CD процессов, проектирование архитектуры базы данных',
-    },
-    {
       icon: 'analitic',
       label: 'Аналитика',
       text:
         'Проектирование и разработка масштабируемых интерфейсов, административных панелей, создание UI-китов, верстка, гибкая и сложная логика с современным стеком',
     },
     {
-      icon: 'design',
-      label: 'Дизайн',
+      icon: 'backend',
+      label: 'Бекенд-разработка',
       text:
-        'Проектирование и разработка масштабируемых интерфейсов, административных панелей, создание UI-китов, верстка, гибкая и сложная логика',
+        'Создание и развертка бекенда, настройка CI/CD процессов, проектирование архитектуры базы данных',
     },
   ];
 </script>
+
+<section class="specalisation">
+  <Underline>
+    <h2>Чем я занимаюсь?</h2>
+  </Underline>
+  <div class="specs">
+    {#each specs as spec}
+      <div class="spec">
+        <div class="icon">
+          <Icon name={spec.icon} />
+        </div>
+        <div class="text">
+          <h3>{spec.label}</h3>
+          <p>{spec.text}</p>
+        </div>
+      </div>
+    {/each}
+  </div>
+</section>
 
 <style lang="scss">
   .specalisation {
@@ -92,22 +105,3 @@
     color: var(--text-gray);
   }
 </style>
-
-<section class="specalisation">
-  <Underline>
-    <h2>Чем я занимаюсь?</h2>
-  </Underline>
-  <div class="specs">
-    {#each specs as spec}
-      <div class="spec">
-        <div class="icon">
-          <Icon name={spec.icon} />
-        </div>
-        <div class="text">
-          <h3>{spec.label}</h3>
-          <p>{spec.text}</p>
-        </div>
-      </div>
-    {/each}
-  </div>
-</section>

@@ -56,7 +56,7 @@
         scrub: true,
         pin: true,
         start: 'top top',
-        end: '+=500px',
+        end: '+=100%',
       },
     });
 
@@ -79,7 +79,7 @@
       .to(
         '.decor-3',
         {
-          y: -230,
+          y: -140,
           duration: 6,
         },
         '-=6',
