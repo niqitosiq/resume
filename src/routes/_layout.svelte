@@ -12,7 +12,7 @@
 
 <main class="main">
   <Background />
-  <div class="wrapper">
+  <div class="main-wrapper">
     <Header />
     <slot />
     <Footer />
@@ -26,7 +26,7 @@
     overflow-x: hidden;
   }
 
-  .wrapper {
+  .main-wrapper {
     background-color: var(--background-dark);
     max-width: var(--container-width);
     color: var(--text-gray);

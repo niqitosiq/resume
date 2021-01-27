@@ -1,6 +1,24 @@
 <script>
   import Button from '../../ui/Button.svelte';
+  import Image from 'svelte-image';
 </script>
+
+<section class="summary">
+  <div class="image"><Image src="/img/person-face.jpg" alt="" /></div>
+  <div class="personal">
+    <p class="info">Веб-разработчик</p>
+    <h1>Никита Штанько</h1>
+    <p class="description">
+      Внимательный веб-разработчик с более чем 4-летним опытом работы, страстью
+      к дизайну, пониманием важности Mobile First и Perfect Pixel. Знакомый с
+      множеством современных и эффективных технологий.
+    </p>
+    <div class="buttons">
+      <Button styling="accent">Резюме</Button>
+      <Button>Связаться</Button>
+    </div>
+  </div>
+</section>
 
 <style lang="scss">
   .summary {
@@ -16,10 +34,8 @@
   .image {
     max-width: 353px;
     min-width: 250px;
-    img {
-      width: 100%;
-      height: auto;
-    }
+    max-height: 300px;
+    width: 100%;
   }
   .personal {
     margin-left: 56px;
@@ -62,20 +78,3 @@
     }
   }
 </style>
-
-<section class="summary">
-  <div class="image"><img src="/img/person-face.jpg" alt="" /></div>
-  <div class="personal">
-    <p class="info">Веб-разработчик</p>
-    <h1>Никита Штанько</h1>
-    <p class="description">
-      Внимательный веб-разработчик с более чем 4-летним опытом работы, страстью
-      к дизайну, пониманием важности Mobile First и Perfect Pixel. Знакомый с
-      множеством современных и эффективных технологий.
-    </p>
-    <div class="buttons">
-      <Button styling="accent">Резюме</Button>
-      <Button>Связаться</Button>
-    </div>
-  </div>
-</section>

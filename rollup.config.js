@@ -11,10 +11,12 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import sveltePreprocess from 'svelte-preprocess';
 import svgicons from 'rollup-plugin-svg-icons';
+import image from 'svelte-image';
 
 const preprocess = sveltePreprocess({
   postcss: true,
   sass: true,
+  ...image(),
 });
 
 const mode = process.env.NODE_ENV;
