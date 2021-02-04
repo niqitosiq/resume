@@ -6,8 +6,6 @@
     { label: 'Опыт', link: '#experience' },
     { label: 'Образование', link: '#education' },
     { label: 'Навыки', link: '#skills' },
-    { label: 'Языки', link: '#langs' },
-    { label: 'Хобби', link: '#hobbies' },
   ];
 
   const scrollTo = (e, to) => {

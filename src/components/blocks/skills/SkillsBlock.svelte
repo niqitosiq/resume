@@ -10,15 +10,13 @@
   let descriptionInstance;
   let wrapperInstance;
   let active = 0;
-  let activeTopOffset = 0;
 
-  const openSkill = (skill, { componentInstance }) => {
+  const openSkill = skill => {
     active = skill;
-    activeTopOffset = componentInstance.offsetTop - skillsInstance.offsetTop;
   };
 </script>
 
-<div class="skills-block">
+<div class="skills-block" id="skills">
   <Underline>
     <h2>Навыки</h2>
   </Underline>
@@ -37,12 +35,12 @@
     </div>
 
     <div class="skill-description" bind:this={descriptionInstance}>
-      <SkillDescription {active} {skills} {activeTopOffset} />
+      <SkillDescription {active} {skills} />
     </div>
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .skills-block {
     width: 100%;
   }
@@ -54,5 +52,13 @@
   .skills,
   .skill-description {
     width: 50%;
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  .skill-description {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
 </style>

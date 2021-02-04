@@ -1,19 +1,9 @@
 <script>
-  import gsap from 'gsap';
   import { quadInOut } from 'svelte/easing';
 
   export let skills;
   export let active;
-  export let activeTopOffset;
 
-  let activeSkill = {};
-  $: {
-    if (typeof document !== 'undefined') {
-      gsap.to('#skill', {
-        y: activeTopOffset,
-      });
-    }
-  }
   $: activeSkill = skills[active];
 
   const skillTransition = (node, { delay = 0, duration = 300 }) => {
@@ -44,7 +34,14 @@
 </div>
 
 <style lang="scss">
+  #skill {
+    height: 100%;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
   .skill {
+    height: 100%;
     padding: 20px 30px;
     position: relative;
     &:before {

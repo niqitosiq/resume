@@ -22,6 +22,9 @@
   .history {
     max-width: calc(50% - 10px);
     margin-bottom: 20px;
+    @media screen and (max-width: 960px) {
+      width: 100%;
+    }
     &-blocks {
       margin-top: 30px;
     }

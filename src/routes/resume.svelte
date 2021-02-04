@@ -111,5 +111,8 @@
   .histories {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 960px) {
+      flex-wrap: wrap;
+    }
   }
 </style>
