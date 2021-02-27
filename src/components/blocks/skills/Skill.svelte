@@ -1,7 +1,9 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { slide } from 'svelte/transition';
 
   export let skill;
+  export let description;
   export let progress = 0.5;
   export let active = false;
 
@@ -32,6 +34,12 @@
     <div class="progress-bar" style={progressStyle} />
     <div class="progress-wrapper" />
   </div>
+
+  {#if active}
+    <div class="description" transition:slide>
+      {description}
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -79,6 +87,13 @@
   .header {
     display: flex;
     justify-content: space-between;
+  }
+  .description {
+    margin-top: 10px;
+    display: none;
+    @media screen and (max-width: 500px) {
+      display: block;
+    }
   }
   h3 {
     font-size: 13px;

@@ -36,4 +36,9 @@
     position: relative;
     z-index: 10;
   }
+  .main-wrapper {
+    @media screen and (max-width: 500px) {
+      margin: 20px auto;
+    }
+  }
 </style>

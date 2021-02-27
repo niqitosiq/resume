@@ -53,7 +53,7 @@
 
   const skills = [
     {
-      skill: 'JavsScript',
+      skill: 'JavaScript',
       progress: 0.8,
       description:
         'Понимаю принципы работы движка JavsScript, умею не допускать утечек памяти, быстро и качественно пишу код.',
@@ -96,14 +96,20 @@
     },
     {
       skill: 'CI/CD',
-      progress: 0.5,
+      progress: 0.4,
       description: 'Опыт в настройке автодеплоя',
     },
     {
       skill: 'Фасилитация и менеджерство',
-      progress: 0.5,
+      progress: 0.4,
       description:
         'Опыт в разработке концепции IT-продуктов, CJM, глубинные интервью, создание понятных задач.',
+    },
+    {
+      skill: 'Дизайн',
+      progress: 0.6,
+      description:
+        'У меня есть вкус в дизайне, я знаю что такое UX и как сделать его хорошо. Иногда получается делать красивые макеты.',
     },
     {
       skill: 'Признавать ошибки и развиваться',
@@ -113,6 +119,10 @@
     },
   ];
 </script>
+
+<svelte:head>
+  <title>niqitosiq.ru | Резюме</title>
+</svelte:head>
 
 <div class="resume" in:fadeIn out:fadeOut>
   <div class="header">

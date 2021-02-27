@@ -25,10 +25,11 @@
   </Underline>
   <div class="skills-wrapper" bind:this={wrapperInstance}>
     <div class="skills">
-      {#each skills as { skill, progress }, index}
+      {#each skills as { skill, progress, description }, index}
         <Skill
           {skill}
           {progress}
+          {description}
           active={index === active}
           on:skillClicked={({ detail }) => {
             openSkill(index, detail);

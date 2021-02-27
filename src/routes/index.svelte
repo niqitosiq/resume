@@ -4,6 +4,15 @@
   import { fadeIn, fadeOut } from '../components/utils/pageFade';
 </script>
 
+<svelte:head>
+  <title>niqitosiq.ru | Главная страница</title>
+</svelte:head>
+
+<div class="index" in:fadeIn out:fadeOut>
+  <Summary />
+  <Specialization />
+</div>
+
 <style lang="scss">
   .index {
     padding: var(--top-padding);
@@ -16,8 +25,3 @@
     }
   }
 </style>
-
-<div class="index" in:fadeIn out:fadeOut>
-  <Summary />
-  <Specialization />
-</div>
