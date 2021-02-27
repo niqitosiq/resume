@@ -28,7 +28,7 @@
 
       gsap.to(block, {
         x: 10 + 10 * Math.abs(active - index),
-        opacity: 0.4 - 0.15 * Math.abs(active - index),
+        opacity: 0.4 - 0.075 * Math.abs(active - index),
       });
     });
 
