@@ -58,7 +58,7 @@
   .burger {
     display: none;
     position: relative;
-    @media screen and (max-width: 780px) {
+    @media screen and (max-width: 900px) {
       display: block;
     }
     &:after {

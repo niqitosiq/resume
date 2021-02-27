@@ -1,6 +1,7 @@
 <script>
   import Link from '../../ui/Link.svelte';
   import Burger from './Burger.svelte';
+  import InWork from './InWork.svelte';
 
   import { stores } from '@sapper/app';
   const { preloading } = stores();
@@ -27,6 +28,8 @@
   <div class="logo">
     <Link href="/">niqitosiq</Link>
   </div>
+
+  <InWork />
 
   <div class="menus">
     <ul class="links">
@@ -85,13 +88,13 @@
     display: flex;
   }
   .links {
-    @media screen and (max-width: 780px) {
+    @media screen and (max-width: 900px) {
       display: none;
     }
   }
   .langs {
     margin-left: 62px;
-    @media screen and (max-width: 780px) {
+    @media screen and (max-width: 900px) {
       display: none;
     }
   }
