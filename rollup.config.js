@@ -9,15 +9,29 @@ import { terser } from 'rollup-plugin-terser';
 import { string } from 'rollup-plugin-string';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import seqPreprocessor from 'svelte-sequential-preprocessor';
 import sveltePreprocess from 'svelte-preprocess';
 import svgicons from 'rollup-plugin-svg-icons';
 import image from 'svelte-image';
 
-const preprocess = sveltePreprocess({
-  postcss: true,
-  sass: true,
-  ...image(),
-});
+const preprocess = seqPreprocessor([
+  sveltePreprocess({
+    postcss: true,
+    sass: true,
+  }),
+  image({
+    optimizeAll: true,
+    inlineBelow: 50000000,
+    publicDir: './static/',
+    outputDir: 'g/',
+    placeholder: 'blur',
+    sizes: [400, 800, 1200],
+    processFolders: ['img'],
+    processFoldersRecursively: true,
+    processFoldersSizes: false,
+    quality: 100,
+  }),
+]);
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';

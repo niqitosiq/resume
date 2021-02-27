@@ -1,6 +1,13 @@
 <script>
   import Button from '../../ui/Button.svelte';
   import Image from 'svelte-image';
+  import { goto } from '@sapper/app';
+
+  function gotoResume(e) {
+    e.preventDefault();
+
+    goto('/resume');
+  }
 </script>
 
 <section class="summary">
@@ -14,7 +21,7 @@
       множеством современных и эффективных технологий.
     </p>
     <div class="buttons">
-      <Button styling="accent">Резюме</Button>
+      <Button styling="accent" on:click={gotoResume}>Резюме</Button>
       <Button>Связаться</Button>
     </div>
   </div>

@@ -4566,6 +4566,14 @@ svelte-preprocess@^4.6.1:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
+svelte-sequential-preprocessor@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/svelte-sequential-preprocessor/-/svelte-sequential-preprocessor-0.0.4.tgz#929c0209f31cdc41336baac6a86f8aa448fc1352"
+  integrity sha512-SbNGw30P2PpJgcu8vxg6OMdDipIubDJbpwzdcthZWuSPTcaYaRObBx3xOHmVDHoCmGwNyMs9EMMt5nMFuuzrLQ==
+  dependencies:
+    svelte "^3.24.0"
+    tslib "~2.0.0"
+
 svelte-waypoint@latest:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/svelte-waypoint/-/svelte-waypoint-0.1.4.tgz#ab467bed08c5f38716709872cf53d3f9da17831b"
@@ -4575,6 +4583,11 @@ svelte@^3.17.3:
   version "3.31.0"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.31.0.tgz#13966e5f55b975bc86675469bb2c58dd0e558d97"
   integrity sha512-r+n8UJkDqoQm1b+3tA3Lh6mHXKpcfOSOuEuIo5gE2W9wQYi64RYX/qE6CZBDDsP/H4M+N426JwY7XGH4xASvGQ==
+
+svelte@^3.24.0:
+  version "3.34.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.34.0.tgz#a0195a0db0305d78df87520711317b99e6fb8a26"
+  integrity sha512-xWcaQ/J4Yd5k0UWz+ef6i5RW5WP3hNpluEI2qtTTKlMOXERHpVL509O9lIw7sgEn1JjJgTOS+lnnDj99vQ3YqQ==
 
 svelte@latest:
   version "3.32.0"
@@ -4703,6 +4716,11 @@ trouter@^3.1.0:
   integrity sha512-m6s2OdQe5wgpFMC+pAJ+q9djG82O2jcHPOI6RNg1yy9rCYR+WD6Nbpl32fDpfC56nirdRy+opFa/Vk7HYhqaew==
   dependencies:
     glob "^7.1.2"
+
+tslib@~2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
+  integrity sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

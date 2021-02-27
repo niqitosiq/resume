@@ -20,7 +20,8 @@
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.30.0",
     "sirv": "^1.0.0",
-    "svelte-preprocess": "^4.6.1"
+    "svelte-preprocess": "^4.6.1",
+    "svelte-sequential-preprocessor": "^0.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

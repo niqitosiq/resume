@@ -9,8 +9,13 @@
   const emitEvent = (type, event) => {
     dispatch(type, event);
   };
-  dispatch('click');
 </script>
+
+<button {type} class={styling} on:click={e => emitEvent('click', e)}>
+  <span>
+    <slot />
+  </span>
+</button>
 
 <style lang="scss" global>
   button {
@@ -75,9 +80,3 @@
     }
   }
 </style>
-
-<button {type} class={styling} on:click={emitEvent}>
-  <span>
-    <slot />
-  </span>
-</button>
