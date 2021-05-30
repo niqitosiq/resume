@@ -2423,8 +2423,8 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.3:
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
 gsap@./gsap-bonus.tgz:
-  version "3.5.1"
-  resolved "./gsap-bonus.tgz#4bd982a28e4c3d77d77f0bbb271ae2645f9bce7c"
+  version "3.6.1"
+  resolved "./gsap-bonus.tgz#b0d1dbf3d78ca6b2196fc0f8810f0eec2ddc1586"
 
 har-schema@^2.0.0:
   version "2.0.0"
