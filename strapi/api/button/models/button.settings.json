@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buttons",
+  "info": {
+    "name": "button"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "accent",
+        "common"
+      ]
+    },
+    "summary": {
+      "via": "buttons",
+      "model": "summary"
+    }
+  }
+}

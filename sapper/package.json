@@ -9,6 +9,7 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
+    "@rollup/plugin-alias": "^3.1.2",
     "compression": "^1.7.1",
     "gsap": "./gsap-bonus.tgz",
     "normalize.scss": "^0.1.0",
@@ -20,7 +21,7 @@
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.30.0",
     "sirv": "^1.0.0",
-    "svelte-preprocess": "^4.6.1",
+    "svelte-preprocess": "^4.7.3",
     "svelte-sequential-preprocessor": "^0.0.4"
   },
   "devDependencies": {

@@ -1,7 +1,21 @@
+<script context="module">
+  import SummaryApi from '@api/summary';
+
+  export async function preload(page, session) {
+    const summary = await new SummaryApi(this.fetch, session).get();
+
+    return {
+      summary,
+    };
+  }
+</script>
+
 <script>
   import Specialization from '../components/blocks/index/Specialization.svelte';
   import Summary from '../components/blocks/index/Summary.svelte';
   import { fadeIn, fadeOut } from '../components/utils/pageFade';
+
+  export let summary;
 </script>
 
 <svelte:head>
@@ -9,6 +23,7 @@
 </svelte:head>
 
 <div class="index" in:fadeIn out:fadeOut>
+  {summary}
   <Summary />
   <Specialization />
 </div>

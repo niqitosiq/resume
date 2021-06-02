@@ -8,30 +8,46 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import { string } from 'rollup-plugin-string';
 import config from 'sapper/config/rollup.js';
-import pkg from './package.json';
 import seqPreprocessor from 'svelte-sequential-preprocessor';
 import sveltePreprocess from 'svelte-preprocess';
 import svgicons from 'rollup-plugin-svg-icons';
-import image from 'svelte-image';
+import alias from '@rollup/plugin-alias';
+import pkg from './package.json';
 
 const preprocess = seqPreprocessor([
   sveltePreprocess({
     postcss: true,
     sass: true,
   }),
-  image({
-    optimizeAll: true,
-    inlineBelow: 50000000,
-    publicDir: './static/',
-    outputDir: 'g/',
-    placeholder: 'blur',
-    sizes: [400, 800, 1200],
-    processFolders: ['img'],
-    processFoldersRecursively: true,
-    processFoldersSizes: false,
-    quality: 100,
-  }),
 ]);
+
+const projectRootDir = path.resolve(__dirname);
+console.log(projectRootDir);
+const aliases = alias({
+  entries: [
+    {
+      find: '@',
+      replacement: path.resolve(projectRootDir, 'src'),
+    },
+    {
+      find: '@ui',
+      replacement: path.resolve(projectRootDir, 'src/components/ui'),
+    },
+    { find: '@api', replacement: path.resolve(projectRootDir, 'api') },
+    {
+      find: '@consts',
+      replacement: path.resolve(projectRootDir, 'src/consts'),
+    },
+    {
+      find: '@styles',
+      replacement: path.resolve(projectRootDir, 'src/styles'),
+    },
+    {
+      find: '@directives',
+      replacement: path.resolve(projectRootDir, 'src/directives'),
+    },
+  ],
+});
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -45,6 +61,7 @@ const onwarn = (warning, onwarn) =>
 
 export default {
   client: {
+    aliases,
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
@@ -117,6 +134,7 @@ export default {
   },
 
   server: {
+    aliases,
     input: config.server.input(),
     output: config.server.output(),
     plugins: [
