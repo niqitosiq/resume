@@ -1,0 +1,94 @@
+version: '3'
+
+services:
+  strapi:
+    image: strapi/strapi
+    container_name: strapi
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_NAME: ${POSTGRES_DB}
+      DATABASE_HOST: ${POSTGRES_HOST}
+      DATABASE_PORT: ${POSTGRES_PORT}
+      DATABASE_USERNAME: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - webnet
+    volumes:
+      - ./strapi:/srv/app
+    ports:
+      - '1337:1337'
+
+  nginx:
+    container_name: nginx-container
+    build:
+      context: ./nginx/
+    ports:
+      - '${PROXY_PORT}:${PROXY_PORT}'
+      - '443:443'
+    volumes:
+      - ./logs:/var/log/nginx/
+    depends_on:
+      - sapper
+      - strapi
+    networks:
+      - webnet
+    env_file:
+      - .env
+
+  sapper:
+    build:
+      context: ./sapper/
+      dockerfile: Dockerfile.prod
+      target: 'production'
+    container_name: sapper-container
+    ports:
+      - '${FRONTEND_PORT}:${FRONTEND_PORT}'
+    volumes:
+      - /usr/src/app/node_modules
+    env_file:
+      - .env
+    networks:
+      - webnet
+
+  postgresdb:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - webnet
+    env_file:
+      - .env
+    ports:
+      - '${POSTGRES_PORT}:${POSTGRES_PORT}'
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: '${POSTGRES_EMAIL}'
+      PGADMIN_DEFAULT_PASSWORD: '${POSTGRES_PASSWORD}'
+    volumes:
+      - pgadmin:/root/.pgadmin
+    ports:
+      - '${PGADMIN_PORT:-5050}:80'
+    networks:
+      - webnet
+    env_file:
+      - .env
+
+networks:
+  webnet:
+    driver: bridge
+    name: webnet
+
+volumes:
+  postgres:
+  pgadmin:
+  strapi-data:
