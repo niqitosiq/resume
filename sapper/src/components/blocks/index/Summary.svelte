@@ -8,21 +8,25 @@
 
     goto('/resume');
   }
+
+  function openTelegram() {
+    window.open('https://t.me/niqitosiq', '_blank').focus();
+  }
 </script>
 
 <section class="summary">
-  <div class="image"><Image src="/img/person-face.jpg" alt="" /></div>
+  <div class="image"><Image src="/img/person-face.png" alt="It's my photo" /></div>
   <div class="personal">
     <p class="info">Веб-разработчик</p>
     <h1>Никита Штанько</h1>
     <p class="description">
-      Внимательный веб-разработчик с более чем 4-летним опытом работы, страстью
-      к дизайну, пониманием важности Mobile First и Perfect Pixel. Знакомый с
-      множеством современных и эффективных технологий.
+      Внимательный веб-разработчик с более чем 4-летним опытом работы, страстью к дизайну,
+      пониманием важности Mobile First и Perfect Pixel. Знакомый с множеством современных и
+      эффективных технологий.
     </p>
     <div class="buttons">
       <Button styling="accent" on:click={gotoResume}>Резюме</Button>
-      <Button>Связаться</Button>
+      <Button on:click={openTelegram}>Связаться</Button>
     </div>
   </div>
 </section>
@@ -34,7 +38,7 @@
     @media screen and (max-width: 930px) {
       align-items: flex-start;
     }
-    @media screen and (max-width: 712px) {
+    @media screen and (max-width: 748px) {
       flex-wrap: wrap;
     }
   }
@@ -46,7 +50,7 @@
   }
   .personal {
     margin-left: 56px;
-    @media screen and (max-width: 712px) {
+    @media screen and (max-width: 748px) {
       margin-left: 0;
       margin-top: 20px;
     }

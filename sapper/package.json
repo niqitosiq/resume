@@ -13,7 +13,7 @@
     "compression": "^1.7.1",
     "gsap": "./gsap-bonus.tgz",
     "normalize.scss": "^0.1.0",
-    "polka": "next",
+    "polka": "^1.0.0-next.22",
     "postcss": "^8.2.1",
     "postcss-load-config": "^3.0.0",
     "postcss-nested": "^5.0.3",

@@ -9,10 +9,10 @@
   <div class="content">
     <div class="header">
       <div class="timing">{timing}</div>
-      <div class="company">{company}</div>
+      <div class="company">{@html company}</div>
     </div>
     <h3>{label}</h3>
-    <p>{text}</p>
+    <p>{@html text}</p>
   </div>
 </div>
 
@@ -52,6 +52,14 @@
       }
       .company {
         opacity: 1;
+        :global(a) {
+          &:after {
+            transform: scaleX(1);
+          }
+          &:hover:after {
+            opacity: 1;
+          }
+        }
       }
     }
 
@@ -99,6 +107,23 @@
     @media screen and (max-width: 500px) {
       margin-left: 0;
       margin-top: 20px;
+    }
+
+    :global(a) {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--accent);
+        opacity: 0.3;
+        transform: scaleX(0);
+        transition: transform 0.3s ease, opacity 0.15s;
+        transform-origin: left center;
+      }
     }
   }
   .timing {

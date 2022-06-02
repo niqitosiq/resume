@@ -10,6 +10,7 @@ import { string } from 'rollup-plugin-string';
 import config from 'sapper/config/rollup.js';
 import seqPreprocessor from 'svelte-sequential-preprocessor';
 import sveltePreprocess from 'svelte-preprocess';
+import image from 'svelte-image';
 import svgicons from 'rollup-plugin-svg-icons';
 import alias from '@rollup/plugin-alias';
 import pkg from './package.json';
@@ -18,6 +19,9 @@ const preprocess = seqPreprocessor([
   sveltePreprocess({
     postcss: true,
     sass: true,
+  }),
+  image({
+    placeholder: 'blur',
   }),
 ]);
 
@@ -55,8 +59,7 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) =>
   (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
-  (warning.code === 'CIRCULAR_DEPENDENCY' &&
-    /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
 
 export default {
@@ -75,7 +78,7 @@ export default {
         hydratable: true,
         emitCss: true,
         preprocess,
-        css: css => {
+        css: (css) => {
           css.write('static/bundle.css');
         },
       }),
@@ -148,7 +151,7 @@ export default {
         emitCss: true,
         dev,
         preprocess,
-        css: css => {
+        css: (css) => {
           css.write('static/bundle.css');
         },
       }),
@@ -168,9 +171,7 @@ export default {
         include: './src/components/background/circles/*.svg',
       }),
     ],
-    external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules,
-    ),
+    external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
     preserveEntrySignatures: 'strict',
     onwarn,

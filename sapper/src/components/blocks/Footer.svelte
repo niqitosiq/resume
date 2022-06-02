@@ -1,9 +1,16 @@
 <script>
   const links = [
     { label: 'Вконтакте', link: 'https://vk.com/niqitosiq' },
-    { label: 'Телеграм', link: 'https://vk.com/niqitosiq' },
+    { label: 'Телеграм', link: 'https://t.me/niqitosiq' },
   ];
 </script>
+
+<footer class="footer">
+  <div class="social">
+    {#each links as link}<a href="{link.link} "> {link.label} </a>{/each}
+  </div>
+  <div class="copyright">© 2020 Все права защищены.</div>
+</footer>
 
 <style lang="scss">
   .footer {
@@ -38,10 +45,3 @@
     }
   }
 </style>
-
-<footer class="footer">
-  <div class="social">
-    {#each links as link}<a href="{link.link} "> {link.label} </a>{/each}
-  </div>
-  <div class="copyright">© 2020 Все права защищены.</div>
-</footer>
